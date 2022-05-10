@@ -1,19 +1,19 @@
 import { client } from './client';
 
 export async function getStarWarsChars() {
-    const response = await client
-        .from('StarWarsChars')
-        .select('*');
+  const response = await client
+    .from('StarWarsChars')
+    .select('*');
 
-    return response.body;
+  return response.body;
 }
 
 export async function getStarWarsCharById(id) {
-    const response = await client
-        .from('StarWarsChars')
-        .select('*')
-        .match({ id })
-        .single();
+  const response = await client
+    .from('StarWarsChars')
+    .select('*')
+    .match({ id })
+    .single();
 
-    return response.body;
+  return response.body;
 }
